@@ -1,0 +1,357 @@
+/* Importation via @font-face de la police Raleway pour les contenus */
+@font-face {
+    font-family: 'Raleway';
+    src: url('https://gstatic.com') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('https://gstatic.com') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Variables de l'identité graphique (Couleurs officielles de la maquette) */
+:root {
+    --primary-color: #17abb3;   /* Turquoise principal */
+    --text-dark: #333333;       /* Gris foncé pour le contenu */
+    --bg-light-grey: #e3e3e3;   /* Fond gris de séparation */
+    --bg-very-light: #f5f5f5;   /* Fond clair des colonnes */
+    --white: #ffffff;           /* Blanc */
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Marges internes incluses dans le modèle de boîte */
+}
+
+body {
+    background-color: var(--bg-light-grey);
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-dark);
+}
+
+/* PROTECTION TECHNIQUE POUR LES POLICES DE FONT AWESOME */
+/* Permet aux icônes classiques et de marques de s'afficher sans conflit de police */
+.fa-solid, .fa-regular {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+.fa-brands {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+/* Structure principale du CV (1160px fixe) */
+.cv-container {
+    width: 1160px; /* Largeur fixe stricte demandée */
+    background-color: var(--white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+/* EN-TÊTE STRUCTURÉ EN DEUX COLONNES (30% / 70%) */
+.cv-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+}
+
+/* Colonne En-tête Gauche (30% de large, alignée sur le bas) */
+.header-left-col {
+    width: 30%;
+    padding: 30px 25px;
+    display: flex !important;
+    justify-content: center !important; /* Centre la photo horizontalement */
+    align-items: center !important;     /* Centre la photo verticalement au milieu du bandeau */
+}
+
+.profile-pic-container {
+    display: block;
+}
+
+/* Photo de profil arrondie avec bordure et effet zoom */
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    object-fit: cover;
+    cursor: zoom-in; /* Effet n°2 : Pointeur zoom au survol */
+    transition: transform 0.2s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Colonne En-tête Droite (70% de large pour tout le texte) */
+.header-right-col {
+    width: 70%;
+    padding: 40px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;     /* Centre horizontalement tous les enfants */
+    text-align: center !important;
+}
+
+.header-right-col h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.header-right-col h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Grille des coordonnées dans la colonne de droite */
+.contact-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 24px;
+    font-size: 0.95rem;
+    width: auto;
+    margin: 0 auto; /* Centre la grille globalement */
+    text-align: left;
+}
+
+.header-link {
+    color: var(--white);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-link i {
+    width: 16px;
+    text-align: center;
+}
+
+.header-link[href]:hover {
+    text-decoration: underline;
+}
+
+/* Alignement des deux colonnes principales du corps (Flexbox) */
+.cv-body {
+    display: flex !important; 
+    flex-direction: row !important;
+    width: 100%;
+}
+
+/* Colonne de gauche du corps (30%) */
+.left-column {
+    width: 30%;
+    background-color: var(--bg-very-light);
+    padding: 35px 25px;
+}
+
+.sidebar-section {
+    margin-bottom: 35px;
+}
+
+/* Titres de la colonne de gauche (Sans gras, sans majuscules forcées) */
+.sidebar-section h3 {
+    font-family: 'Lato', sans-serif;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: normal; /* Pas de gras */
+    text-transform: none; /* Écriture naturelle */
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--bg-light-grey);
+    padding-bottom: 5px;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Style et couleur des étoiles Unicode natifs */
+.stars {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Alignement et espacement Flexbox des langues */
+.language-item {
+    display: flex;
+    justify-content: space-between; /* Nom à gauche, niveau à droite */
+    margin-bottom: 12px; /* Espace vertical */
+    font-size: 0.95rem;
+}
+
+.lang-name {
+    font-weight: bold;
+}
+
+.lang-level {
+    color: var(--text-dark);
+}
+
+.sidebar-section p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+/* Listes personnalisées avec carrés bleu turquoise */
+.square-list {
+    list-style: none; /* Désactive les ronds noirs par défaut */
+    font-size: 0.95rem;
+}
+
+.square-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.square-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color); /* Carré bleu turquoise */
+    display: inline-block;
+}
+
+/* Colonne de droite du corps (70%) */
+.right-column {
+    width: 70%;
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section {
+    margin-bottom: 35px;
+}
+
+/* Titres de la colonne de droite (Sans gras, sans majuscules forcées) */
+.main-section h3 {
+    font-family: 'Lato', sans-serif;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: normal; /* Retire le gras */
+    text-transform: none; /* Écriture naturelle */
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* Profil indenté et justifié */
+.profile-section p {
+    text-align: justify;
+    text-indent: 40px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Liste chronologique (Formations, Stages, Expériences) */
+.timeline-item {
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 4px solid transparent; 
+    transition: all 0.25s ease-in-out;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.item-header h4 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #111;
+}
+
+/* Dates en bleu turquoise */
+time.date {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.company {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Effet n°1 : Bordure et fond au survol de la ligne */
+.dynamic-card:hover {
+    background-color: var(--bg-very-light);
+    border-left-color: var(--primary-color);
+}
+
+/* Pied de page complet */
+.cv-footer {
+    background-color: var(--primary-color);
+    padding: 25px 20px;
+    text-align: center;
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-icons a {
+    color: var(--white);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+    display: inline-block;
+}
+
+/* Effet n°3 : Opacité réduite au survol des icônes */
+.footer-icons a:hover {
+    opacity: 0.6;
+}
+
+/* Date de mise à jour sous les réseaux */
+.cv-update-date {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+.cv-update-date time {
+    color: inherit;
+    font-weight: normal;
+}
