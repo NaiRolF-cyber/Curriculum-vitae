@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Florian Huppe</title>
+    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+
+    <!-- Importation Google Fonts pour la police des titres (Lato) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Favicon requis pointant vers assets/ -->
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <header class="cv-header">
+            <!-- Colonne En-tête Gauche (Alignée sur les 30% du bas) -->
+            <div class="header-left-col">
+                <div class="profile-pic-container">
+                    <a href="assets/ma-photo.png" target="_blank">
+                        <img src="assets/ma-photo.png" alt="Photo de profil de Florian Huppe" class="profile-pic">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Colonne En-tête Droite (Alignée sur les 70% du bas) -->
+            <div class="header-right-col">
+                <h1>Florian Huppe</h1>
+                <h2>Développeur Web et Web Mobile</h2>
+                <div class="contact-grid">
+                    <div>
+                        <a href="mailto:votre.email@example.com" class="header-link">
+                            <i class="fa-solid fa-envelope"></i>Mail
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://google.com" target="_blank" class="header-link">
+                            <i class="fa-solid fa-location-dot"></i> Adresse
+                        </a>
+                    </div>
+                    <div>
+                        <a href="tel:0600000000" class="header-link">
+                            <i class="fa-solid fa-phone"></i> Téléphone
+                        </a>
+                    </div>
+                    <div>
+                        <span class="header-link">
+                            <i class="fa-solid fa-car"></i> Permis B
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- CORPS DU CV À DEUX COLONNES (Flexbox) -->
+        <div class="cv-body">
+            
+            <!-- COLONNE GAUCHE (30%) -->
+            <aside class="left-column">
+                
+                <!-- Section compétences avec entités Unicode -->
+                <section class="sidebar-section">
+                    <h3>Compétences</h3>
+                    <div class="skill-item">
+                        <span>HTML</span>
+                        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2606;&#x2606;</div>
+                    </div>
+                    <div class="skill-item">
+                        <span>CSS</span>
+                        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2606;&#x2606;</div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <div class="stars">&#x2605;&#x2606;&#x2606;&#x2606;&#x2606;</div>
+                    </div>
+                    <div class="skill-item">
+                        <span>PHP</span>
+                        <div class="stars">&#x2605;&#x2606;&#x2606;&#x2606;&#x2606;</div>
+                    </div>
+                </section>
+
+                <section class="sidebar-section">
+                    <h3>Langues</h3>
+                    <div class="language-item">
+                        <span class="lang-name">Français</span>
+                        <span class="lang-level">Langue maternelle</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="lang-name">Anglais</span>
+                        <span class="lang-level">Notions</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="lang-name">Espagnol</span>
+                        <span class="lang-level">Notions</span>
+                    </div>
+                </section>
+
+                <section class="sidebar-section">
+                    <h3>Qualités</h3>
+                    <ul class="square-list">
+                        <li>Esprit d'équipe</li>
+                        <li>Autonomie</li>
+                        <li>Organisation</li>
+                        <li>Créativité</li>
+                    </ul>
+                </section>
+
+                <section class="sidebar-section">
+                    <h3>Centres d'intérêt</h3>
+                    <ul class="square-list">
+                        <li>Pétanque</li>
+                        <li>Padel</li>
+                        <li>Voyage</li>
+                    </ul>
+                </section>
+
+            </aside>
+
+            <!-- COLONNE DROITE (70%) -->
+            <main class="right-column">
+                
+                <!-- Profil indenté et justifié -->
+                <section class="main-section profile-section">
+                    <h3>Profil</h3>
+                    <p>Je m'appel Florian Huppe j'ai 25 ans. Je suis un jeune homme souriant et ponctuel, à l'écoute des autres. J'aime travaillé en groupe ainsi qu'en autonomie j'aimerais rejoindre votre projet pour grandir professionnellement et continuer d'en apprendre plus sur le métier de développeur Web et Web Mobile. </p>
+                </section>
+
+                <!-- Parcours professionnel et formations -->
+                <section class="main-section">
+                    <h3>Formations</h3>
+                    <div class="timeline-item dynamic-card">
+                        <div class="item-header">
+                            <h4>Titre Professionnel DWWM</h4>
+                            <time datetime="2026/2027" class="date">2026 - 2027</time>
+                        </div>
+                        <em class="company">Centre Européen de Formation</em>
+                    </div>
+                    <div class="timeline-item dynamic-card">
+                        <div class="item-header">
+                            <h4>CAP Pâtisserie</h4>
+                            <time datetime="2016-09/2018-09" class="date">Septembre 2016 - Septembre 2018</time>
+                        </div>
+                        <em class="company">CFA de Laon</em>
+                    </div>
+                    <div class="timeline-item dynamic-card">
+                        <div class="item-header">
+                            <h4>Brevet</h4>
+                            <time datetime="2016" class="date">2016</time>
+                        </div>
+                        <p class="company">Collège de Charly sur Marne</p>
+                    </div>
+                </section>
+
+                <section class="main-section">
+                    <h3>Stage</h3>
+                    <div class="timeline-item dynamic-card">
+                        <div class="item-header">
+                            <h4>Pâtisserie</h4>
+                            <time datetime="2016-05/2016-06" class="date">Mai 2016 - Juin 2016</time>
+                        </div>
+                        <em class="company">Pâtissier</em>
+                    </div>
+                </section>
+
+                <section class="main-section">
+                    <h3>Expériences Professionnelles</h3>
+                    <div class="timeline-item dynamic-card">
+                        <div class="item-header">
+                            <h4>Technicien en traitement de surface</h4>
+                            <time datetime="2018/2025" class="date">2018 - 2023</time>
+                        </div>
+                        <em class="company">Chez Saint-Gobain-Sovis</em>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- PIED DE PAGE AVEC RÉSEAUX ET DATE -->
+        <footer class="cv-footer">
+            <div class="footer-icons">
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            </div>
+            <div class="cv-update-date">
+                Dernière mise à jour : <time datetime="2026-11-04">4 novembre 2026</time>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
