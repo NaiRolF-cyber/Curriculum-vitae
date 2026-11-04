@@ -1,4 +1,3 @@
-/* Importation via @font-face de la police Raleway pour les contenus */
 @font-face {
     font-family: 'Raleway';
     src: url('https://gstatic.com') format('woff2');
@@ -13,20 +12,18 @@
     font-style: normal;
 }
 
-/* Variables de l'identité graphique (Couleurs officielles de la maquette) */
 :root {
-    --primary-color: #17abb3;   /* Turquoise principal */
-    --text-dark: #333333;       /* Gris foncé pour le contenu */
-    --bg-light-grey: #e3e3e3;   /* Fond gris de séparation */
-    --bg-very-light: #f5f5f5;   /* Fond clair des colonnes */
-    --white: #ffffff;           /* Blanc */
+    --primary-color: #17abb3; 
+    --text-dark: #333333; 
+    --bg-light-grey: #e3e3e3; 
+    --bg-very-light: #f5f5f5; 
+    --white: #ffffff; 
 }
 
-/* Réinitialisation de base */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Marges internes incluses dans le modèle de boîte */
+    box-sizing: border-box;
 }
 
 body {
@@ -38,8 +35,6 @@ body {
     color: var(--text-dark);
 }
 
-/* PROTECTION TECHNIQUE POUR LES POLICES DE FONT AWESOME */
-/* Permet aux icônes classiques et de marques de s'afficher sans conflit de police */
 .fa-solid, .fa-regular {
     font-family: "Font Awesome 6 Free" !important;
     font-weight: 900 !important;
@@ -49,7 +44,6 @@ body {
     font-weight: 400 !important;
 }
 
-/* Structure principale du CV (1160px fixe) */
 .cv-container {
     width: 1160px; /* Largeur fixe stricte demandée */
     background-color: var(--white);
@@ -67,27 +61,26 @@ body {
     width: 100%;
 }
 
-/* Colonne En-tête Gauche (30% de large, alignée sur le bas) */
+/* Colonne En-tête Gauche (30% de large) */
 .header-left-col {
     width: 30%;
     padding: 30px 25px;
     display: flex !important;
-    justify-content: center !important; /* Centre la photo horizontalement */
-    align-items: center !important;     /* Centre la photo verticalement au milieu du bandeau */
+    justify-content: center !important;
+    align-items: center !important;  
 }
 
 .profile-pic-container {
     display: block;
 }
 
-/* Photo de profil arrondie avec bordure et effet zoom */
 .profile-pic {
     width: 130px;
     height: 130px;
     border-radius: 50%;
     border: 4px solid var(--white);
     object-fit: cover;
-    cursor: zoom-in; /* Effet n°2 : Pointeur zoom au survol */
+    cursor: zoom-in;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -95,14 +88,14 @@ body {
     transform: scale(1.05);
 }
 
-/* Colonne En-tête Droite (70% de large pour tout le texte) */
+/* Colonne En-tête Droite (70% de large) */
 .header-right-col {
     width: 70%;
     padding: 40px;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    align-items: center !important;     /* Centre horizontalement tous les enfants */
+    align-items: center !important; 
     text-align: center !important;
 }
 
@@ -123,14 +116,13 @@ body {
     width: 100%;
 }
 
-/* Grille des coordonnées dans la colonne de droite */
 .contact-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px 24px;
     font-size: 0.95rem;
     width: auto;
-    margin: 0 auto; /* Centre la grille globalement */
+    margin: 0 auto;
     text-align: left;
 }
 
@@ -151,14 +143,12 @@ body {
     text-decoration: underline;
 }
 
-/* Alignement des deux colonnes principales du corps (Flexbox) */
 .cv-body {
     display: flex !important; 
     flex-direction: row !important;
     width: 100%;
 }
 
-/* Colonne de gauche du corps (30%) */
 .left-column {
     width: 30%;
     background-color: var(--bg-very-light);
@@ -169,13 +159,12 @@ body {
     margin-bottom: 35px;
 }
 
-/* Titres de la colonne de gauche (Sans gras, sans majuscules forcées) */
 .sidebar-section h3 {
     font-family: 'Lato', sans-serif;
     color: var(--primary-color);
     font-size: 1.2rem;
-    font-weight: normal; /* Pas de gras */
-    text-transform: none; /* Écriture naturelle */
+    font-weight: normal; 
+    text-transform: none; 
     margin-bottom: 15px;
     border-bottom: 2px solid var(--bg-light-grey);
     padding-bottom: 5px;
@@ -188,18 +177,16 @@ body {
     font-size: 0.95rem;
 }
 
-/* Style et couleur des étoiles Unicode natifs */
 .stars {
     color: var(--primary-color);
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
 
-/* Alignement et espacement Flexbox des langues */
 .language-item {
     display: flex;
-    justify-content: space-between; /* Nom à gauche, niveau à droite */
-    margin-bottom: 12px; /* Espace vertical */
+    justify-content: space-between; 
+    margin-bottom: 12px;
     font-size: 0.95rem;
 }
 
@@ -216,9 +203,8 @@ body {
     margin-bottom: 8px;
 }
 
-/* Listes personnalisées avec carrés bleu turquoise */
 .square-list {
-    list-style: none; /* Désactive les ronds noirs par défaut */
+    list-style: none;
     font-size: 0.95rem;
 }
 
@@ -236,7 +222,7 @@ body {
     left: 0;
     width: 8px;
     height: 8px;
-    background-color: var(--primary-color); /* Carré bleu turquoise */
+    background-color: var(--primary-color);
     display: inline-block;
 }
 
@@ -252,19 +238,17 @@ body {
     margin-bottom: 35px;
 }
 
-/* Titres de la colonne de droite (Sans gras, sans majuscules forcées) */
 .main-section h3 {
     font-family: 'Lato', sans-serif;
     color: var(--primary-color);
     font-size: 1.4rem;
-    font-weight: normal; /* Retire le gras */
-    text-transform: none; /* Écriture naturelle */
+    font-weight: normal; 
+    text-transform: none; 
     margin-bottom: 20px;
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 5px;
 }
 
-/* Profil indenté et justifié */
 .profile-section p {
     text-align: justify;
     text-indent: 40px;
@@ -272,7 +256,6 @@ body {
     line-height: 1.6;
 }
 
-/* Liste chronologique (Formations, Stages, Expériences) */
 .timeline-item {
     padding: 15px;
     margin-bottom: 12px;
@@ -293,7 +276,6 @@ body {
     color: #111;
 }
 
-/* Dates en bleu turquoise */
 time.date {
     font-size: 0.95rem;
     color: var(--primary-color);
@@ -307,13 +289,11 @@ time.date {
     margin-bottom: 4px;
 }
 
-/* Effet n°1 : Bordure et fond au survol de la ligne */
 .dynamic-card:hover {
     background-color: var(--bg-very-light);
     border-left-color: var(--primary-color);
 }
 
-/* Pied de page complet */
 .cv-footer {
     background-color: var(--primary-color);
     padding: 25px 20px;
@@ -339,12 +319,10 @@ time.date {
     display: inline-block;
 }
 
-/* Effet n°3 : Opacité réduite au survol des icônes */
 .footer-icons a:hover {
     opacity: 0.6;
 }
 
-/* Date de mise à jour sous les réseaux */
 .cv-update-date {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8);
